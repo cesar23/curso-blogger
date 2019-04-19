@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!--definimos la codificación -->
+<!DOCTYPE html> <!--declaramos nuestro documento -->
+<html lang="es"> <!--definimos el idioma -->
+<head> <!--encabezado del documento -->
+<b:skin>
+<![CDATA[/*
+<!--etiqueta especial de blogger utilizada para incluir los css-->
+-----------------------------------------------
+Blogger Template Style
+Name:        Nombre de plantilla
+Author :     Francisco Banegas
+License:     libre
+Web site:    Codesblue.info
+----------------------------------------------- */
+]]> </b:skin>
+
+</head>
+<body> <!--cuerpo de nuestro documento -->
+
+<b:section id="Header"> <!--Creamos el contenedor de nuestra aplicación -->
+
+<b:widget id="Header1" type="Header"> <!--Declaramos nuestra aplicación -->
+
+<b:includable id="main"><!--Cuerpo de nuestra aplicación la cual se encargara de almacenar nuestra variable <data> de blogger -->
+
+</b:includable>
+
+</b:widget>
+
+</b:section>
+
+<b:section id="main"><!--etiqueta especial de blogger utilizada para declara el cuerpo de nuestro aplicativo-->
+    <b:widget id="Blog1" type="Blog">
+        <b:includable id="main">
+            <!-- incluimos el componente de abajo-->
+           <b:include name='post'></b:include>
+
+        </b:includable>
+
+
+
+         <!-- los componentes  creados -->
+        <b:includable id='nextprev'>
+            uno
+        </b:includable>
+        <b:includable id='post' var='post'>
+                <b:loop values='data:posts' var='post'>
+                              <!--data:view.isHomepage si lo encontramos en la home muestra lo siguiente-->
+                              <b:if cond='data:view.isHomepage'>
+              
+                                          
+                                              <br/>
+                                             <a expr:href='data:post.url'>
+                                                  <data:post.title/>
+                                             </a> 
+                                       
+              
+                               <!--data:view.isPost si lo encontramos dentro de un articulo muestra lo siguiente  -->
+                              <b:elseif cond='data:view.isPost'/>
+              
+                                      <data:post.title/>
+                                      <data:post.body/>
+                                       <!--- data:post.title == titulo de mi articulo -->
+                                        <!--- data:post:body  == contenido de mi entrada  -->
+                                     
+              
+                                        
+              
+                               <!--data:view.isPage si lo encontramos dentro de una pagina estatica  muestra lo siguiente  -->
+                              <b:elseif cond='data:view.isPage'/>
+              
+                                      <h1><data:post.title/></h1>
+                                      <data:post.body/>
+                              </b:if>
+                          </b:loop>
+              </b:includable>
+                  
+    </b:widget>
+</b:section>
+</body>
+</html>

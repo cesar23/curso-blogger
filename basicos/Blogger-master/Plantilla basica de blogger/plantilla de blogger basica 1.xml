@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!--definimos la codificación -->
+<!DOCTYPE html> <!--declaramos nuestro documento -->
+<html lang="es"> <!--definimos el idioma -->
+<head> <!--encabezado del documento -->
+<b:skin>
+<![CDATA[/*
+<!--etiqueta especial de blogger utilizada para incluir los css-->
+-----------------------------------------------
+Blogger Template Style
+Name:        Nombre de plantilla
+Author :     Francisco Banegas
+License:     libre
+Web site:    Codesblue.info
+----------------------------------------------- */
+]]> </b:skin>
+
+</head>
+
+
+<body> <!--cuerpo de nuestro documento -->
+
+<b:section id="main"/><!--etiqueta especial de blogger utilizada para declara el cuerpo de nuestro aplicativo-->
+
+</body>
+</html>
